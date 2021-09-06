@@ -1,0 +1,41 @@
+Steps
+spring security use krddi mulin login page ekak enne
+when useing spring security it auto navigate to the http://localhost:8010/login when we try any url
+it s login interface we want to give user =user and password =(console eke print wena ek)
+
+UserController class
+@RestController
+public class UserController {
+    @GetMapping("/home")
+
+User class
+@Entity
+@Table(name="user")
+public class User {}
+
+UserRepository Interface
+public interface UserRepository extends JpaRepository<User,Long> {
+
+
+websecurityconfiguration(Authentication)
+implement Authenticationprovicer and inside it implement
+DaoAuthentication provider using userDetailService
+interface we want to implement userdetailsinterface
+
+CustomuserDetailsServvice class
+@Service
+public class CustomUserDetailsService implements UserDetailsService {
+CustomuserDetailsServvice meka implement wenna ona interface eke eke aniwaryen
+public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+}
+implement karanna ona saha eke return type UserDetails
+nisa api aya class ekak hadanna ona UserDetails kila
+user convert krnna ona UserDetails walata
+
+UserDetails class
+mekata user object aragnna ona saha implement krnna ona
+UserDetails interfase eken
+project needs anuwa hadagnna ona true false dala null tiana ewata ona ew
+return krala
+public class CustomUserDetails implements UserDetails {
+
